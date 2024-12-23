@@ -1,9 +1,10 @@
 # cash_flow_fetcher.py
 import requests
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime
 
-ALPHA_VANTAGE_API_KEY = "8URF1FNH2GOXU635"
+# Replace with your Alpha Vantage API key
+ALPHA_VANTAGE_API_KEY = "your_alpha_vantage_api_key"
 ALPHA_VANTAGE_BASE_URL = "https://www.alphavantage.co/query"
 
 def fetch_cash_flow_data(symbol):
@@ -35,7 +36,7 @@ def fetch_cash_flow_data(symbol):
             return {}
 
         # Set the start date to Q1 2020
-        start_date = datetime(2020,1,1)
+        start_date = datetime(2020, 1, 1)
 
         cash_flow_by_date = {}
         for report in quarterly_reports:
@@ -63,3 +64,4 @@ def fetch_cash_flow_data(symbol):
     except Exception:
         logging.exception("Error fetching cash flow data.")
         return {}
+
