@@ -1,0 +1,72 @@
+[
+	{
+		"name": "company_symbol",
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	{
+		"name": "fiscal_year",
+		"type": "INTEGER",
+		"mode": "REQUIRED"
+	},
+	{
+		"name": "fiscal_period",
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	{
+		"name": "statement_type",
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	{
+		"name": "total_revenue",
+		"type": "NUMERIC",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "net_income",
+		"type": "NUMERIC",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "research_and_development",
+		"type": "NUMERIC",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "interest_expense",
+		"type": "NUMERIC",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "income_tax_expense",
+		"type": "NUMERIC",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "depreciation",
+		"type": "NUMERIC",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "amortization",
+		"type": "NUMERIC",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "operating_cash_flow",
+		"type": "NUMERIC",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "capital_expenditures",
+		"type": "NUMERIC",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "retrieval_date",
+		"type": "TIMESTAMP",
+		"mode": "REQUIRED"
+	}
+]
