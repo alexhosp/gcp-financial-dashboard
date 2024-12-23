@@ -1,15 +1,14 @@
 # bigquery_loader.py
 
 import logging
-import os
 from google.cloud import bigquery
 from datetime import datetime
 from decimal import Decimal
 
 # Set up environment
-PROJECT_ID = "financial-444917"
-DATASET_ID = "alpha_vantage_data"
-TABLE_ID = "financial_statements_raw"
+PROJECT_ID = "your_project_id"  # Replace with your GCP Project ID
+DATASET_ID = "your_dataset_id"  # Replace with your BigQuery dataset ID
+TABLE_ID = "your_table_id"      # Replace with your BigQuery table ID
 
 def parse_fiscal_year_and_period(date_str):
     """
@@ -45,7 +44,7 @@ def safe_decimal(value_str):
 def transform_and_insert_bq(merged_data, symbol):
     """
     1) Transforms `merged_data` (dict keyed by fiscalDateEnding)
-       into rows matching the financial_statements_raw schema.
+       into rows matching the BigQuery table schema.
     2) Inserts those rows into BigQuery.
     3) Returns a dict with either success or error info.
     """
@@ -71,7 +70,7 @@ def transform_and_insert_bq(merged_data, symbol):
             "amortization": safe_decimal(fields.get("amortization")),
             "operating_cash_flow": safe_decimal(fields.get("operatingCashFlow")),
             "capital_expenditures": safe_decimal(fields.get("capitalExpenditures")),
-            "retrieval_date": retrieval_ts.isoformat() # Convert to ISO string for serialization
+            "retrieval_date": retrieval_ts.isoformat()  # Convert to ISO string for serialization
         }
 
         rows_to_insert.append(row)
