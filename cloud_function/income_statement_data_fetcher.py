@@ -3,7 +3,7 @@ import requests
 import logging
 from datetime import datetime, timedelta
 
-ALPHA_VANTAGE_API_KEY = "8URF1FNH2GOXU635"
+ALPHA_VANTAGE_API_KEY = "your_alpha_vantaga_api_key"
 ALPHA_VANTAGE_BASE_URL = "https://www.alphavantage.co/query"
 
 def fetch_income_statement_data(symbol):
